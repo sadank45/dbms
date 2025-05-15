@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask with JS and CSS</title>
+
+    <!-- Link CSS file -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+
+    <!-- Link JS file -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    
+</body>
+</html>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>Hotel Management System</h1>
+            <a class="staff-portal" href="staff">Staff Portal</a>
+        </div>
+    </header>
+    
+
+    <main class="container">
+        <div class="page-header">
+            <h2>Guest Registration</h2>
+            <p>Enter guest information and manage check-in/check-out</p>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <h3>Guest Information</h3>
+            </div>
+            <form id="registrationForm">
+                <div class="card-content">
+                    <div class="form-grid">
+                        <!-- Guest Name -->
+                        <div class="form-group">
+                            <label for="name">Full Name <span class="required">*</span></label>
+                            <input type="text" id="name" name="name" placeholder="Enter guest name" required>
+                        </div>
+
+                        <!-- Date of Birth -->
+                        <div class="form-group">
+                            <label for="dob">Date of Birth <span class="required">*</span></label>
+                            <input type="date" id="dob" name="dob" required>
+                        </div>
+
+                        <!-- Age
+                        <div class="form-group">
+                            <label for="age">Age</label>
+                            <input type="text" id="age" name="age" readonly class="readonly-input">
+                        </div> -->
+
+                        <!-- Address -->
+                        <div class="form-group full-width">
+                            <label for="address">Address <span class="required">*</span></label>
+                            <textarea id="address" name="address" placeholder="Enter complete address" required></textarea>
+                        </div>
+                    </div>
+
+                    <div class="section-divider"></div>
+
+                    <h3>Reservation Details</h3>
+                    <div class="form-grid">
+                        <!-- Check-in Date -->
+                        <div class="form-group">
+                            <label for="checkIn">Check-in Date <span class="required">*</span></label>
+                            <input type="date" id="checkIn" name="checkIn" required>
+                        </div>
+
+                        <!-- Check-out Date -->
+                        <div class="form-group">
+                            <label for="checkOut">Check-out Date <span class="required">*</span></label>
+                            <input type="date" id="checkOut" name="checkOut" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-footer">
+                    <button type="button" id="clearBtn" class="btn btn-outline">Clear Form</button>
+                    <button type="submit" class="btn btn-primary">Register Guest</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <div id="toast" class="toast">
+        <div class="toast-content">
+            <div class="toast-title"></div>
+            <div class="toast-message"></div>
+        </div>
+        <button class="toast-close">&times;</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
